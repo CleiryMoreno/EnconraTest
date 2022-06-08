@@ -7,19 +7,22 @@ namespace EncoraTest
 {
    public static class SortingString
     {
-        public static string sortingOperations(string inputString)
+        //Using fucntional Programing
+        public static string sortingOperations(string str)
         {
-
-
-            char[] tempArray = inputString.ToCharArray();
-            string finalResult = string.Empty;
-
-            Array.Sort(tempArray);
-            var result = tempArray.GroupBy(n => n)
-                          .OrderByDescending(g => g.Count())
-                          .ThenBy(g => g.Key)
-                          .SelectMany(g => g);
-            finalResult = String.Join("", result);
+           
+            string finalResult = "404";
+            if (str != "" & str != null & str != string.Empty)
+            {
+                finalResult = string.Empty;
+                char[] tempArray = str.ToCharArray();
+                Array.Sort(tempArray);
+                var result = tempArray.GroupBy(n => n)
+                              .OrderByDescending(g => g.Count())
+                              .ThenBy(g => g.Key)
+                              .SelectMany(g => g);
+                finalResult = String.Join("", result);
+            }
 
             return finalResult;
         }
@@ -37,11 +40,13 @@ namespace EncoraTest
         // using imperative programing/ loops
         public static string sortingWord(string str)
         {
-            var result = string.Empty;
-            var num = str.Length;
+            var result = "404";
+            var num = 0;
+
+            if (str!="" & str!= null & str != string.Empty){
+              num = str.Length;
             var frequency = new Dictionary<char, int>();
-
-
+            result = string.Empty;
             for (var i = 0; i < num; i++)
             {
                 if (!frequency.ContainsKey(str[i]))
@@ -53,6 +58,7 @@ namespace EncoraTest
 
             foreach (var c in frecuencySorted)
                 result += new string(c.Key, c.Value);
+            }
 
             return result;
         }

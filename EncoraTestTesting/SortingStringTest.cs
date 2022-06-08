@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace EncoraTestTesting
 {
     
-    public class Tests
+    public class SortingStringTest
     {
         [SetUp]
         public void Setup()
@@ -58,7 +58,7 @@ namespace EncoraTestTesting
 
         };
         [Test]
-        public void SortingStringCase1()
+        public void sortingOperations()
         {
             int i = 0;
             foreach (string c in case1)
@@ -69,8 +69,52 @@ namespace EncoraTestTesting
                 i++;
             }
             }
+        [Test]
+        public void sortingOperations2()
+        {
+            int i = 0;
+            foreach (string c in case2)
+            {
+                var result = SortingString.sortingOperations(c);
+
+                Assert.AreEqual(result, expectedOutCase2[i]);
+                i++;
+            }
+        }
+        [Test]
+        public void sortingOperationsWithNullValue()
+        {
+            string str = null;
+
+                var result = SortingString.sortingOperations(str);
+
+                Assert.AreEqual(result,"404");
+                
+            
+        }
+        [Test]
+        public void sortingOperationsWitEmptyValue()
+        {
+            string str = string.Empty;
+
+            var result = SortingString.sortingOperations(str);
+
+            Assert.AreEqual(result, "404");
+
+        }
 
             [Test]
+            public void sortingOperationsWitEmptyValue1()
+        {
+            string str = "";
+
+            var result = SortingString.sortingOperations(str);
+
+            Assert.AreEqual(result, "404");
+
+
+        }
+        [Test]
         public void SortingWord()
         {
             int i = 0;
@@ -82,18 +126,7 @@ namespace EncoraTestTesting
                 i++;
             }
         }
-        [Test]
-        public void SortingStringCase2()
-        {
-            int i = 0;
-            foreach (string c in case2)
-            {
-                var result = SortingString.sortingOperations(c);
-
-                Assert.AreEqual(result, expectedOutCase2[i]);
-                i++;
-            }
-        }
+      
 
         [Test]
         public void SortingWord2()
@@ -107,6 +140,39 @@ namespace EncoraTestTesting
                 i++;
             }
         }
-      
+        [Test]
+        public void SortingWordWithNullValue()
+        {
+            string str = null;
+
+            var result = SortingString.sortingWord(str);
+
+            Assert.AreEqual(result, "404");
+
+
+        }
+        [Test]
+        public void SortingWordWitEmptyValue()
+        {
+            string str = string.Empty;
+
+            var result = SortingString.sortingWord(str);
+
+            Assert.AreEqual(result, "404");
+
+        }
+
+            [Test]
+            public void SortingWordEmptyValue1()
+        {
+            string str = "";
+
+            var result = SortingString.sortingWord(str);
+
+            Assert.AreEqual(result,"404");
+
+
+        }
+
     }
 }

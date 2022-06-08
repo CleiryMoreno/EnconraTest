@@ -9,17 +9,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-                  string[] case1 = {
-"wzenwebuau",
-"vokfxzynwl",
-"neldfeyrxk",
-"wgadfiodgs",
-"ykiuvzfcbc"
-};                  
-            foreach(String s in case1) { 
+                  string[] array = {
+                    "wzenwebuau",
+                    "vokfxzynwl"
+                            };                  
+            foreach(String s in array) { 
 
         Console.WriteLine(SortingString.sortingOperations(s));
-           // Console.WriteLine(SortingString.sortingWord(s));
+         Console.WriteLine(SortingString.sortingWord(s));
             }
         }
 
