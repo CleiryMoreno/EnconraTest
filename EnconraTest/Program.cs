@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            SortByFrecuency("xyzxya");
+            SortByFrecuency("xyzxyaa");
 
             //Console.WriteLine(sortString("ccccaaabd"));
         }
