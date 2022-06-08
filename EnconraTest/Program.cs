@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -7,9 +8,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            SortByFrecuency("xyzxyaa");
+           
 
-            //Console.WriteLine(sortString("ccccaaabd"));
+            Console.WriteLine(sortString("ccccaaabd"));
+          
+          
         }
 
 
@@ -53,6 +56,24 @@ namespace ConsoleApp1
                 }
             }
         }
+        // Using Linq / Fuctional Programing
+        public static string sortString(string inputString)
+        {
+
+            char[] tempArray = inputString.ToCharArray();
+            string finalResult = string.Empty;
+
+            Array.Sort(tempArray);
+            var result = tempArray.GroupBy(n => n)
+                          .OrderByDescending(g => g.Count())
+                          .ThenBy(g => g.Key)
+                          .SelectMany(g => g);
+            finalResult = String.Join("", result);
+
+            return finalResult;
+        }
+
+       
 
     }
 }
