@@ -12,7 +12,7 @@ namespace EncoraTest
         {
            
             string finalResult = "404";
-            if (str != "" & str != null & str != string.Empty)
+            if ( str != null & str != string.Empty)
             {
                 finalResult = string.Empty;
                 char[] tempArray = str.ToCharArray();
@@ -43,7 +43,7 @@ namespace EncoraTest
             var result = "404";
             var num = 0;
 
-            if (str!="" & str!= null & str != string.Empty){
+            if ( str!= null & str != string.Empty){
               num = str.Length;
             var frequency = new Dictionary<char, int>();
             result = string.Empty;

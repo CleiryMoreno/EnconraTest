@@ -1,143 +1,96 @@
 using EncoraTest;
 using NUnit.Framework;
+using System;
 
 namespace EncoraTestTesting
 {
     
     public class SortingStringTest
     {
+        const string expected = "404";
         [SetUp]
         public void Setup()
         {
         }
-        public static string[] case1 = {
-"dulgvgzwqg",
-"gxtjtmtywr",
-"hnlilnxiupgt",
-"gzjotckivp",
-"dpwwsdptae",
-"pcscpilknb",
-"btvyhhmf1f",
-"artrtngxcr",
-"nrtemcoadn",
-"fkdsgnekft"
-};
-        public static string[] expectedOutCase1 =
-              {
-            "gggdlquvwz",
-"tttgjmrwxy",
-"iillnnghptux",
-"cgijkoptvz",
-"ddppwwaest",
-"ccppbiklns",
-"ffhh1bmtvy",
-"rrrttacgnx",
-"nnacdemort",
-"ffkkdegnst",
-
-};
-
-        public static string[] case2 =
-                       {
- "wzenwebuau",
-"vokfxzynwl",
-"neldfeyrxk",
-"wgadfiodgs",
-"ykiuvzfcbc"
-
-        };
-
-        public static string[] expectedOutCase2 =
-          {
-            "eeuuwwabnz",
-"fklnovwxyz",
-"eedfklnrxy",
-"ddggafiosw",
-"ccbfikuvyz",
-
-
-        };
+        
         [Test]
-        public void sortingOperations()
+        public void SortingOperationsCaseOne()
         {
-            int i = 0;
-            foreach (string c in case1)
+          
+            foreach (var c in StringTestCases.testCaseOne)
             {
-                var result = SortingString.sortingOperations(c);
+                var result = SortingString.sortingOperations(c.Key);
 
-                Assert.AreEqual(result, expectedOutCase1[i]);
-                i++;
+                Assert.AreEqual(result, c.Value);
+                Console.WriteLine($"Input:{c.Key} OutPut: {result} ");
+
             }
             }
         [Test]
-        public void sortingOperations2()
+        public void SortingOperationCaseTwo()
         {
-            int i = 0;
-            foreach (string c in case2)
+          
+            foreach (var c in StringTestCases.testCaseTwo)
             {
-                var result = SortingString.sortingOperations(c);
+                var result = SortingString.sortingOperations(c.Key);
 
-                Assert.AreEqual(result, expectedOutCase2[i]);
-                i++;
+                Assert.AreEqual(result, c.Value);
+                Console.WriteLine($"Input:{c.Key} OutPut: {result} ");
+
             }
         }
         [Test]
-        public void sortingOperationsWithNullValue()
+        public void SortingOperationsWithNullValue()
         {
             string str = null;
 
                 var result = SortingString.sortingOperations(str);
 
-                Assert.AreEqual(result,"404");
-                
-            
+                Assert.AreEqual(result, expected);
+            Console.WriteLine($"Input:{str} OutPut: {result} ");
+
+
         }
         [Test]
-        public void sortingOperationsWitEmptyValue()
+        public void SortingOperationsWitEmptyValue()
         {
             string str = string.Empty;
 
             var result = SortingString.sortingOperations(str);
 
-            Assert.AreEqual(result, "404");
+            Assert.AreEqual(result, expected);
+            Console.WriteLine($"Input:{str} OutPut: {result} ");
 
         }
 
-            [Test]
-            public void sortingOperationsWitEmptyValue1()
-        {
-            string str = "";
-
-            var result = SortingString.sortingOperations(str);
-
-            Assert.AreEqual(result, "404");
-
-
-        }
+    
         [Test]
-        public void SortingWord()
+        public void SortingWordCaseOne()
         {
-            int i = 0;
-            foreach (string c in case1)
+        
+            foreach (var c in StringTestCases.testCaseOne)
             {
-                var result = SortingString.sortingWord(c);
+                var result = SortingString.sortingWord(c.Key);
 
-                Assert.AreEqual(result, expectedOutCase1[i]);
-                i++;
+                Assert.AreEqual(result,c.Value);
+                Console.WriteLine($"Input:{c.Key} OutPut: {result} ");
+
+
             }
         }
       
 
         [Test]
-        public void SortingWord2()
+        public void SortingWordCaseTwo()
         {
-            int i = 0;
-            foreach (string c in case2)
+            
+            foreach (var c in StringTestCases.testCaseTwo)
             {
-                var result = SortingString.sortingWord(c);
+                var result = SortingString.sortingWord(c.Key);
 
-                Assert.AreEqual(result, expectedOutCase2[i]);
-                i++;
+                Assert.AreEqual(result, c.Value);
+                Console.WriteLine($"Input:{c.Key} OutPut: {result} ");
+
             }
         }
         [Test]
@@ -147,7 +100,8 @@ namespace EncoraTestTesting
 
             var result = SortingString.sortingWord(str);
 
-            Assert.AreEqual(result, "404");
+            Assert.AreEqual(result, expected);
+            Console.WriteLine($"Input:{str} OutPut: {result} ");
 
 
         }
@@ -158,21 +112,12 @@ namespace EncoraTestTesting
 
             var result = SortingString.sortingWord(str);
 
-            Assert.AreEqual(result, "404");
+            Assert.AreEqual(result, expected);
+            Console.WriteLine($"Input:{str} OutPut: {result} ");
 
         }
 
-            [Test]
-            public void SortingWordEmptyValue1()
-        {
-            string str = "";
-
-            var result = SortingString.sortingWord(str);
-
-            Assert.AreEqual(result,"404");
-
-
-        }
+  
 
     }
 }
